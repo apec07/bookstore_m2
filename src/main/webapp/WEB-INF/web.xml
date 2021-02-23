@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>bookstore</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <!-- 
+    <listener>
+        <listener-class>idv.cm.listener.Log4jServletContextListener</listener-class>
+    </listener>
+   -->
+     <listener>
+        <listener-class>idv.cm.listener.DbConnection</listener-class>
+    </listener>
+     
+
+  <servlet>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<servlet-class>idv.cm.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LoginServlet</servlet-name>
+  	<url-pattern>/login.html</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+  	<servlet-name>ShoppingServlet</servlet-name>
+  	<servlet-class>idv.cm.servlet.ShoppingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ShoppingServlet</servlet-name>
+  	<url-pattern>/shopping.html</url-pattern>
+  </servlet-mapping>
+  <!--
+<context-param>
+        <param-name>isLog4jContextSelectorNamed</param-name>
+        <param-value>true</param-value>
+    </context-param>
+  
+     <context-param>
+        <param-name>log4jContextName</param-name>
+        <param-value>bookStore</param-value>
+    </context-param>
+     <context-param>
+        <param-name>log4jConfiguration</param-name>
+        <param-value>resources/log4j2.xml</param-value>
+    </context-param>
+    
+
+
+    <filter>
+        <filter-name>log4jServletFilter</filter-name>
+        <filter-class>idv.cm.filters.Log4jServletFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>log4jServletFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+        <dispatcher>ASYNC</dispatcher> Servlet 3.0 w/ disabled auto-initialization only; not supported in 2.5 
+    </filter-mapping>
+    
+  -->
+</web-app>
