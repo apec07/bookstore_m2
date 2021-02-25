@@ -21,7 +21,7 @@ import idv.cm.db.UserVO;
 /**
  * Register Servlet
  */
-@WebServlet("/UserServlet")
+@WebServlet("/new_user.html")
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection con = null;

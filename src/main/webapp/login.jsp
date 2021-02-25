@@ -32,6 +32,16 @@
 	</table>
 	
 </form>
+<div id="data"></div>
+<script type="text/javascript">
+// load user list
+	window.onload = function loaduser()
+	function loaduser(){
+		$.post("users.html")
+	}
+	
+</script>
+
 </body>
 <script>
 	const name = document.querySelector('#name');
